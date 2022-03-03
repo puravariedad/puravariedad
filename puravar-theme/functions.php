@@ -126,7 +126,7 @@ function lrndm_register_sidebar() {
 		'name'	=> __('Sidebar principal', 'puravar'),
 		'id'	=> 'main_sidebar',
 		'description'	=>  __('Sidebar principal para los widgets', 'puravar'),
-		'before_widget'	=>	'<div id="%1$s" class="widget %2$s">',
+		'before_widget'	=>	'<div id="%1$s" class="widget col grid4 %2$s">',
 		'after_widget'	=> 	'</div>',
 		'before_title'	=>	'<h3 class="widget-title">',
 		'after_title'	=>	'</h3>',
