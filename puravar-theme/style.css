@@ -76,6 +76,9 @@ label {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
+.container.makeit__big {
+    max-width: 1280px;
+}
 input[type="submit"],
 a.button,
 input.button {
@@ -154,23 +157,23 @@ h1,h2,h3,h4,h5,h6 {
     font-family: 'Roboto', sans-serif;
     font-weight: 900;
 }
-h1 {
+h1, .h1 {
     font-size: 3.000em;
 }
-h2 {
+h2, .h2 {
     font-size: 2.250em;
 }
-h3 {
+h3, .h3 {
     font-size: 1.875em;
 }
-h4 {
+h4, .h4 {
     font-size: 1.125em;
     text-transform: uppercase;
 }
-h5 {
+h5, .h5 {
    font-size: 1em; 
 }
-h6 {
+h6, .h6 {
    font-size: 0.875em;
    text-transform: uppercase;
 }
@@ -324,8 +327,10 @@ a:hover {
     *Sidebar*
   ***********************************************
 */
+.sidebar_vertical {
+	padding: 0 0 0 35px;
+}
 .sidebar {
-    padding: 0 0 0 35px;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -348,7 +353,28 @@ a:hover {
 	font-family: 'Vollkorn', serif;	
 	font-style: italic;	
 } 
-	
+/* 
+  ***********************************************
+    *Home*
+  ***********************************************
+*/
+.banner_home {
+	font-family: 'Roboto', sans-serif;
+}
+.banner_home .container {
+	padding-top: 3rem;
+	padding-bottom: 4rem
+}
+.banner_home h1 {
+	margin-top: 0
+}
+.banner_home h2 {
+	font-size: 1rem;
+	font-weight: normal
+}
+.banner_home a {
+	text-decoration: underline
+}
 /* 
   ***********************************************
     *Ye Post and ye page*
@@ -360,8 +386,8 @@ a:hover {
 .title h1 {
 	margin: 0 0 1.5rem 0;
 }
-.pagena a:hover, 
-.blog_posts a:hover {
+.pagena a,
+.blog_posts a {
 	text-decoration: underline;
 }
 .pagena img, .post img {
@@ -380,6 +406,12 @@ a:hover {
 .post figure a {
 	color: #f4f4f4
 }
+.post .wp-block-embed-twitter {
+	padding: 1rem;
+}
+.twitter-tweet {
+	margin: 0 auto;
+} 
 .exampler {
 	background: #f5f69a;
 	border: 1px solid #dadb8e;
@@ -444,19 +476,24 @@ code .tag {
     *Video responsive*
   ***********************************************
 */
+figure.is-type-video,
 .videoWrapper {
+	background-color: transparent;
 	position: relative;
 	padding-bottom: 56.25%; /* 16:9 */
-	padding-top: 25px;
 	height: 0;
 }
+.is-type-video .wp-block-embed__wrapper,
 .videoWrapper div {
 	width: auto!important;
 	height: 340px!important;
 }
+.is-type-video object,
+.is-type-video embed, 
+.is-type-video iframe,
 .videoWrapper object,
 .videoWrapper embed, 
-.videoWrapper iframe {
+.videoWrapper iframe{
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -744,6 +781,37 @@ code .tag {
 }
 /* 
   ***********************************************
+    *Cookie Banner*
+  ***********************************************
+*/
+.cookie_banner {
+	position: fixed;
+	bottom: 0.5rem;
+	left: 0.5rem;
+	width: 460px;
+	z-index: 555;
+}
+.cookie_body {
+	font-size: 0.8rem;
+	padding: 1rem;
+}
+.cookie_body .btn {
+	font-size: 0.7rem;
+	padding: 5px;
+}
+.cookie_body a {
+	text-decoration: underline
+}
+@media (max-width: 769px) {
+	.cookie_banner {
+		bottom: 0;
+		left: 0;
+		text-align: center;
+		width: 100%;
+	}
+}
+/* 
+  ***********************************************
     *Grid*
   ***********************************************
 */
@@ -819,7 +887,6 @@ code .tag {
 .portfolio h5 {
 	margin-bottom: 0.5rem
 }
-
 @media (min-width: 600px){ 
     .grid_by_2 { 
 		-moz-column-count: 2;
@@ -854,6 +921,10 @@ code .tag {
 		column-gap: 1rem;
 		column-rule: none;
 	} 
+	.wrapgrid {
+	  display: grid;
+	  grid-template-columns: repeat(3, 1fr);
+	}
 }
 
 /* 
@@ -1197,11 +1268,13 @@ code .tag {
     .portfolio .button {
 		width: auto;
     }
+	.figure.is-type-video,
     .videoWrapper {
 		padding-bottom: 0; /* 16:9 */
 		padding-top: 0;
 		height: auto;
 	}
+	.is-type-video .wp-block-embed__wrapper,
 	.videoWrapper div {
 		width: auto!important;
 	}
