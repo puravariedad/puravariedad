@@ -49,9 +49,9 @@
     <?php wp_reset_query();?>
     <?php if (! get_query_var('paged') ) { ?>
         <div class="container btop_dash top-spacer">
-            <div class="video__youtube">
-                <div class="title bbottom_dash top-spacer">
-                    <h3>Lo que ando viendo en youtube</h3>
+            <div class="video__youtube bottom-padded">
+                <div class="title top-spacer">
+                    <h3 class="mt-0">Lo que ando viendo en youtube</h3>
                     <p class="meta"></p>
                 </div>
                 <div class="related_posts grid_by_3">
@@ -66,7 +66,9 @@
                     <a href="/category/youtube-videos/">Ver todos los videos</a>
                 </p>
             </div>
-            <?php get_sidebar(); ?>
+			<div class="top-spacer btop_dash top-padded">
+				<?php get_sidebar(); ?>
+			</div>
         </div>
     <?php } ?>
 <?php get_footer(); ?>
