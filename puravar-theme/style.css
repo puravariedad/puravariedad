@@ -42,12 +42,12 @@ tr td  {
   ***********************************************
 */
 ::selection {
-    color: #ffffff;
-    background: #222222;
+	color: #fff;
+    background: #171616;
 }
 ::-moz-selection {
-    color: #ffffff;
-    background: #222222;
+	color: #fff;
+    background: #171616;
 }
 input[type="text"],
 input[type="submit"],
@@ -131,6 +131,9 @@ input.button {
     float: right;
 }
 
+a.card_block {
+	display: block
+}
 .card_block,
 .linkgrid-page .simple-links-list li {
     padding: 1rem;
@@ -402,6 +405,7 @@ a:hover {
 	background: #f4f4f4;
 	margin: 0 0 0 0;
 	padding: 0 0 0 0;
+	text-align: center
 }
 .post figure a {
 	color: #f4f4f4
@@ -635,6 +639,27 @@ figure.is-type-video,
 	overflow: auto;
 	border-bottom: 1px #222222 solid;
 }
+.page-id-612 h3 {
+	margin: 4rem 0 1rem 0;
+}
+
+/* 
+  ***********************************************
+    *Graveyard*
+  ***********************************************
+*/
+.cross {
+    display: inline-block;
+    font-size: 2rem;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
+	-webkit-transform:rotate(45deg);
+	transform:rotate(45deg)
+}
+a:hover .cross {
+	-webkit-transform:rotate(0deg);
+	transform:rotate(0deg)
+}
 
 /* 
 ***********************************************
@@ -648,8 +673,18 @@ figure.is-type-video,
 	background: #171616;
 	color: #ccc;
 }
+.red-theme {
+	background: #fa110f;
+	color: #fff;
+}
+.red-theme a {
+	color: #fff;
+}
 .dark-theme a {
 	color: #ccc;
+}
+.red-theme .card_block {
+	border-color: #fff;
 }
 .linkgrid-page h1 {
 	font-family: 'Vollkorn', serif;	
@@ -719,6 +754,11 @@ figure.is-type-video,
 	background: #171616;
 	color: #333
 }
+.red-theme .logo_pv_bottom:before,
+.red-theme .logo_pv_bottom:after {
+	background: #fa110f;
+	color: #333
+}
 
 
 /* 
@@ -785,6 +825,7 @@ figure.is-type-video,
   ***********************************************
 */
 .cookie_banner {
+	color: #222;
 	position: fixed;
 	bottom: 0.5rem;
 	left: 0.5rem;
