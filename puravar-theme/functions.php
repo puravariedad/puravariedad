@@ -35,6 +35,23 @@ function wpb_add_google_fonts() {
 }
 add_action( 'wp_enqueue_scripts', 'wpb_add_google_fonts' );
 /*-----------------------------------------------------------------------------------*/
+/*Project graveyard*/
+/*-----------------------------------------------------------------------------------*/
+function graveyard_post_type(){
+	$args = array(
+		'label'                 => __( 'Proyectines', 'puravar' ),
+		'description'           => __( 'Custom post type', 'puravar' ),
+		'supports'              => array( 'title','editor','thumbnail', 'excerpt', 'custom-fields' ),
+		'menu_icon' 			=> 'dashicons-trash',
+		'public'                => true,
+		'menu_position'         => 7,
+		'has_archive'           => true,
+		'rewrite'               =>  array('slug' => 'graveyard'),
+	);
+	register_post_type( 'graveyard', $args );
+}
+add_action('init', 'graveyard_post_type');
+/*-----------------------------------------------------------------------------------*/
 /*	Thumbnail
 /*-----------------------------------------------------------------------------------*/
 if ( function_exists( 'add_theme_support' ) )
