@@ -4,7 +4,7 @@ Theme URI: http://puravariedad.com/
 Author: @puravariedad
 Author URI: http://puravariedad.com/;
 Description: This is the theme for my personal blog
-Version: 3.2
+Version: 3.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: Web design, Mexico, Grid
@@ -276,6 +276,9 @@ a.card_block {
 	background: #171616;
 	color: #ccc;
 }
+.grey-theme {
+	background: #e8e8e8
+}
 .red-theme {
 	background: #fa110f;
 	color: #fff;
@@ -302,6 +305,11 @@ a.card_block {
 .red-theme .logo_pv_bottom:before,
 .red-theme .logo_pv_bottom:after {
 	background: #fa110f;
+	color: #333
+}
+.grey-theme .logo_pv_bottom:before,
+.grey-theme .logo_pv_bottom:after {
+	background: #e8e8e8;
 	color: #333
 }
 
@@ -813,12 +821,12 @@ a.card_block {
 	padding-bottom: 1rem;
 }
 .post figure {
-	background: #f4f4f4;
 	margin: 0 0 0 0;
 	padding: 0 0 0 0;
 }
 .post figcaption {
-    text-align: center
+    text-align: center;
+	padding-bottom: 1rem
 }
 .post .wp-block-embed-twitter {
 	padding: 1rem;
@@ -903,7 +911,6 @@ code .tag {
 */
 figure.is-type-video,
 .videoWrapper {
-	background-color: transparent;
 	position: relative;
 	padding-bottom: 56.25%; /* 16:9 */
 	height: 0;
@@ -983,7 +990,7 @@ figure.is-type-video,
     max-width: 740px;
 }
 .medium_post-content {
-	font-size: 1rem;
+	font-size: 1.2rem;
 }
 .medium_post-content:first-letter { 
 	-webkit-initial-letter: 4;
@@ -998,7 +1005,7 @@ figure.is-type-video,
 	font-size: 1.5rem;
 }
 .medium_post-content h4 {
-	font-size: 1.25rem;
+	font-size: 1.35rem;
 	text-transform: initial
 }
 .medium_post-content hr {
@@ -1306,6 +1313,30 @@ a:hover .cross {
 .vampirin:nth-of-type(9){
     left:90%;-webkit-animation-delay:3s,1s;
     animation-delay:3s,1s
+}
+
+/* 
+  ***********************************************
+    *Linktree*
+  ***********************************************
+*/
+
+.linktree .main-header, .linktree .pie, .linktree .title, .linktree .main-top {
+	display: none;
+}
+.linktree .blog_posts .wp-block-button {
+	width: 100%;
+	margin-bottom: 1rem
+}
+.linktree .blog_posts .wp-block-button__link {
+	width: 100%;
+}
+.linktree .cards_tree a {
+	font-family: 'Roboto', sans-serif;
+	font-size: 1.2rem
+}
+.linktree .cards_tree .wp-block-latest-posts__post-excerpt {
+	font-size: 12px
 }
 
 /* 
