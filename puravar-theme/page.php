@@ -12,6 +12,6 @@
 				<?php endwhile; endif; ?>
 			</div>
 		</section>
-		<?php get_sidebar(); ?>
+		<?php get_sidebar('sec'); ?>
 	</div>	
 <?php get_footer(); ?>
