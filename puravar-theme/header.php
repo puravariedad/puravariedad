@@ -6,7 +6,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, width=device-width">
 
-	<title><?php wp_title( '|', true, 'right' ); ?><?php bloginfo(); ?> </title>
+	<title><?php wp_title( '|', true, 'right' ); ?></title>
 
 
 	<!-- Cosillas divertidas -->
@@ -30,14 +30,14 @@
 </head>
 <?php
 	$classes = array();
-	if (is_404()) {
+	if (get_search_query() or is_404()) {
 		$classes[] = 'grey-theme';
 	} else {
 		$btag = get_post_meta( $post->ID, 'tagbody', true );
 		if( ! empty( $btag ) ) {
 			$classes[] = $btag;
 		}
-	}
+	} 
 ?>
 <body <?php body_class( $classes ); ?>>
 	<div class="main-top dark-theme ">

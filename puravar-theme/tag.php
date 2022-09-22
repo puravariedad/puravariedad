@@ -20,5 +20,8 @@ get_header(); ?>
 					<?php numeric_posts_nav(); ?>
 				</div>
 			</div>
+			<div class="top-spacer btop_dash top-padded">
+				<?php get_sidebar(); ?>
+			</div>
 	</div>	
 <?php get_footer(); ?>

@@ -1,10 +1,10 @@
 <?php get_header(); ?>
 	<?php if (! get_query_var('paged') ) { ?>
         <div class="container makeit__big">
-            <div class="bg_gray banner_home">
+            <div class="banner_home">
                 <div class="container">
                     <h1>UX, UI y otros desvaríos</h1>
-                    <h2>Blog de UX, diseño gráfico, diseño web, ilustración, CSS, portadas de discos y reflexiones que no llevan a ningún lugar a manos de su servidor</h2>
+                    <h2>Blog de UX, diseño gráfico, diseño de producto, ilustración, CSS, portadas de discos y reflexiones que no llevan a ningún lugar a manos de su servidor</h2>
                     Si quires ver mi portafolio está en <a href="http://www.juandiegocalero.com">www.juandiegocalero.com</a>
                 </div>
             </div>

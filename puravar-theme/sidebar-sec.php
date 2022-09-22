@@ -1,4 +1,4 @@
-<aside class="sidebar col grid4">
+<aside class="sidebar sidebar_vertical col grid4">
 	<?php if( is_active_sidebar('main_sidebar2') ) {
 		dynamic_sidebar ('main_sidebar2');
 		} else  { ?>

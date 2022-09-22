@@ -4,7 +4,7 @@ Theme URI: http://puravariedad.com/
 Author: @puravariedad
 Author URI: http://puravariedad.com/;
 Description: This is the theme for my personal blog
-Version: 3.3
+Version: 4
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: Web design, Mexico, Grid
@@ -64,11 +64,15 @@ input[type="email"] {
     border-radius: 0;
     border: 1px solid #222222;
 }
+textarea,
 input[type="message"] {
     height: 100px;
     padding: 0 5px 0 5px;
     border-radius: 0;
     border: 1px solid #222222;
+}
+textarea {
+	width: 100%
 }
 label {
     display: block;
@@ -821,12 +825,11 @@ a.card_block {
 	padding-bottom: 1rem;
 }
 .post figure {
-	margin: 0 0 0 0;
+	margin: 0 0 1.5rem 0;
 	padding: 0 0 0 0;
 }
 .post figcaption {
     text-align: center;
-	padding-bottom: 1rem
 }
 .post .wp-block-embed-twitter {
 	padding: 1rem;
@@ -933,13 +936,66 @@ figure.is-type-video,
 	height: 100%!important;
 }
 
-.comments-area li {
-	list-style: none
-}
-.comment-body {
-	padding: 1rem 1rem 0.5rem 1rem;
+/* 
+  ***********************************************
+    *Comments*
+  ***********************************************
+*/
+
+.comments-area {
+	padding: 2rem 2rem 0.5rem 2rem;
 	border-radius: 4px;
 	background: #f4f4f4;
+	max-width: calc(860px - 4rem);
+	margin: 0 auto
+}
+.comment-reply-title {
+	margin-top: 0;
+}
+.comments-area li {
+	list-style: none;
+	margin-bottom: 2rem;
+	padding-bottom: 1rem;
+	border-bottom: 1px solid #ccc
+}
+.comments-area a {
+	text-decoration: underline
+}
+.comments-area input[type="submit"] {
+	cursor: pointer
+}
+.comment-body {
+	position: relative;
+}
+.comment-author, .comment-meta, .comment-reply-link {
+	font-family: 'Roboto', sans-serif;
+}
+.comment-author {
+	display: flex;
+	align-items: center;
+    gap: 0.5rem;
+}
+.comment-author img {
+	border-radius: 50%
+}
+.comment-reply-link {
+	display: inline-block;
+	border: 1px solid #222;
+	border-radius: 4px;
+	text-decoration: none!important;
+	padding: 6px;
+}
+.comment-form-author input,
+.comment-form-email input {
+    width: 100%
+}
+@media (min-width: 600px){ 
+	.comment-meta {
+		position: absolute;
+		right: 0;
+		top: 0;
+		text-align: right;
+	}
 }
 
 /* 
@@ -1341,6 +1397,23 @@ a:hover .cross {
 
 /* 
   ***********************************************
+    *Plugin overwrite*
+  ***********************************************
+*/
+.slb_data_content,
+.slb_data_content .slb_group_status,
+.slb_data_content .slb_data_title {
+	font-family: 'Merriweather', serif!important;
+	font-size: 1rem!important;
+}
+.slb_data_content {
+	padding-top: 0.5rem!important;
+}
+.slb_data_desc {
+	margin-top: 0!important;
+}
+/* 
+  ***********************************************
     *Mediaqueries*
   ***********************************************
 */
@@ -1452,5 +1525,8 @@ a:hover .cross {
 	.is-type-video .wp-block-embed__wrapper,
 	.videoWrapper div {
 		width: auto!important;
+	}
+	.is-type-video {
+		margin-bottom: 40%!important
 	}
 }
