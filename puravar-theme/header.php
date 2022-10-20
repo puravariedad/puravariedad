@@ -15,15 +15,13 @@
   src="https://code.jquery.com/jquery-3.6.0.min.js"
   integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
   crossorigin="anonymous"></script>
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-57212093-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-57212093-1');
-</script>
+	<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KW32MPZ');</script>
+<!-- End Google Tag Manager -->
 
 <?php wp_head(); ?>
 
@@ -40,6 +38,10 @@
 	} 
 ?>
 <body <?php body_class( $classes ); ?>>
+	<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KW32MPZ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 	<div class="main-top dark-theme ">
 		<div class="container">
 			<?php wp_nav_menu( array('container_class' => 'menu_nav simple_menu', 'theme_location' => 'secondary') ); ?>	
@@ -49,7 +51,7 @@
 		<div class="container">
 			<div class="row_fluid">
 				<div class="col grid6">
-					<a href="/" class="logo_pv_top logo__brand glitch" data-text="Pura Variedad">
+					<a href="/" class="logo_pv_top logo__brand glitch" data-text="Pura Variedad" data-track-id="test">
 						Pura Variedad
 					</a>
 				</div>

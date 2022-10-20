@@ -13,7 +13,8 @@ get_header(); ?>
 		<div class="grid_by_3">
 			<?php
 			$my_query = new WP_Query( array(
-				'post_type' => 'graveyard'
+				'post_type' => 'graveyard',
+				'cat' => '563',
 			)
 			);
 			if ( $my_query->have_posts() ) { 

@@ -1,9 +1,4 @@
-<?php
-/*
- * Template Name: Medium
- * Template Post Type: post
- */
- get_header();  ?>
+<?php get_header();  ?>
     <section class="blog_posts medium_post top-padded-big">
         <div class="latest_posts">
             <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>

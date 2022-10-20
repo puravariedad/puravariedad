@@ -1,5 +1,5 @@
-$(".page-id-8455 .simple-links-list li").each(function(i) {
-    $(this).find("a").prepend("<span class='number'>" + ++i + "</span>");
+$("#need li").each(function(i) {
+    $(this).find("[data-lightbox='post-image']").prepend("<span class='number'>" + ++i + "</span>");
 });
 
 if (localStorage.getItem("cookieSeen") != "shown") {

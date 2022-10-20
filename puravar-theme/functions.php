@@ -44,6 +44,7 @@ function graveyard_post_type(){
 		'supports'              => array( 'title','editor','thumbnail', 'excerpt', 'custom-fields' ),
 		'menu_icon' 			=> 'dashicons-trash',
 		'public'                => true,
+		'taxonomies'  			=> array( 'topics', 'category' ),
 		'menu_position'         => 7,
 		'has_archive'           => true,
 		'rewrite'               =>  array('slug' => 'graveyard'),
@@ -133,6 +134,23 @@ function numeric_posts_nav() {
 
 	echo '</ul></div>' . "\n";
 
+}
+/*-----------------------------------------------------------------------------------*/
+/*	Concédeme jebuscristo la sabiduría para usar lightbox
+/*-----------------------------------------------------------------------------------*/
+add_action( 'wp_enqueue_scripts', 'themeslug_scripts' );
+function themeslug_scripts() {
+wp_enqueue_style( 'lightbox', get_template_directory_uri() . '/lightbox2/code/lightbox.min.css', array(), '4.3.0' );
+wp_enqueue_script( 'lightbox', get_template_directory_uri() . '/lightbox2/code/lightbox-plus-jquery.min.js', array( 'jquery' ), '3.3.0', true );
+}
+
+add_filter('the_content', 'lightbox2');
+function lightbox2 ( $content ) {
+global $post;
+$pattern = "/<a(.*?)href=('|\")(.*?).(bmp|gif|jpeg|jpg|png)('|\")(.*?)>/i";
+$replacement = '<a$1 data-lightbox="post-image" href=$2$3.$4$5$6</a>';
+$content = preg_replace($pattern, $replacement, $content);
+return $content;
 }
 /*-----------------------------------------------------------------------------------*/
 /*	Sidebar
