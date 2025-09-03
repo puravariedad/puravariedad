@@ -1,31 +1,27 @@
 <?php get_header();  ?>
-    <section class="blog_posts medium_post top-padded-big">
+    <section class="blog_posts medium_post">
         <div class="latest_posts">
             <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
                 <article class="post">
                     <?php if ( has_post_thumbnail() ) : ?>
-                        <header class="post_header">
-                            <div class="container pt-0">
-                                <div class="post_header-text container">
-                                    <h1><?php the_title(); ?></h1>
-                                    <div class="meta">
-                                        <p><?php the_time( get_option('date_format') ); ?></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="post_header-thumb bg_black-alpha">
-                                <?php the_post_thumbnail(); ?>
-                            </div>	
-                        </header>
-                        <?php else : ?>
-                        <header class="post_header--void container">
-                            <h1><?php the_title(); ?></h1>
-                            <div class="meta">
-                                <p><?php the_time( get_option('date_format') ); ?></p>
-                            </div>	
-                        </header>
-                    <?php endif; ?>
-                    
+                        <header class="post_header" style="background-image: url(<?php echo get_the_post_thumbnail_url($post_id, 'medium'); ?>);">
+					<?php else : ?>
+						<header class="post_header">
+					<?php endif; ?>
+							<div class="post_header-text">
+								<div class="container">
+									<h1><?php the_title(); ?></h1>
+									<div class="meta"><p><?php the_time( get_option('date_format') ); ?></p></div>
+								</div>
+							</div>
+						</header>
+					<?php if ( has_tag( 'historia-comic-mundial' ) ) : ?>
+					<div class="container">
+						<div class="box yellow-theme">
+							Si quieres saber más detalles sobre esta serie, lo explico en: <a href="/artistas-del-comic-del-mundo-no-occidental/">Artistas del comic del mundo "No occidental"</a>
+						</div>
+					</div>
+					<?php endif; ?>
                     <div class="container medium_post-content">
                         <?php the_content(); ?>
 						<p>
@@ -37,15 +33,12 @@
         </div>
     </section>
     <div class="container top-padded-big">
-			<div class="comments-area">
-				<?php comments_template(); ?>
-			</div>
-        <div class="share-area">
-            <h4>Compartir </h4>
-            <a href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'facebookshare','width=540,height=480,resizable=yes'); return false;" class="fbshare button bg_black" > Facebook </a>
-
-            <a href="#" onclick="window.open('http://twitter.com/share?url='+encodeURIComponent(window.location.href)+'&text='+encodeURIComponent(document.title),'twittershare','width=540,height=480,resizable=yes'); return false;" class="twshare button bg_black"> Twitter</a>
-        </div>
-		<?php get_template_part('inc/related'); ?>
+		<?php /* Está descuajarigau...no sé por qué
+		<?php if ( has_tag( 'historia-comic-mundial' ) ) : ?>
+			<?php get_template_part('inc/related-comic'); ?>
+		<?php else : ?>
+			<?php get_template_part('inc/related'); ?>
+		<?php endif; ?>
+		*/?>
     </div>
 <?php get_footer(); ?>

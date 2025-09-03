@@ -12,7 +12,7 @@ if ($categories) {
     );
     $my_query = new wp_query( $args );
     if( $my_query->have_posts() ) {
-        echo '<div id="related_posts" class="top-padded-big"><h4>Artículos relacionados</h4><div class="latest_posts"><div class="grid_by_3">';
+        echo '<div id="related_posts" class="btop_dash"><h4>Artículos relacionados</h4><div class="latest_posts"><div class="grid_by_3">';
         while( $my_query->have_posts() ) {
             $my_query->the_post();?>
             <article class="excerpt_post card_block">

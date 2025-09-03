@@ -10,7 +10,7 @@ add_action('wp_enqueue_scripts', 'puravar_theme_styles');
 /*	Favicon
 /*-----------------------------------------------------------------------------------*/
 function blog_favicon() {
-echo '<link rel="Shortcut Icon" type="image/x-icon" href="'. get_template_directory_uri() .'/favicon.png" />';
+echo '<link rel="Shortcut Icon" type="image/x-icon" href="'. get_template_directory_uri() .'/favicon.ico" />';
 }
 add_action('wp_head', 'blog_favicon');
 /*-----------------------------------------------------------------------------------*/
@@ -24,16 +24,19 @@ add_action('wp_head', 'scrn_icon');
 /*Enqueue JS*/
 /*-----------------------------------------------------------------------------------*/
 function bootstrapchile_scripts_styles() {
-     wp_enqueue_script('jquery-tools', get_template_directory_uri() . '/scripts.js', array('jquery'), '3', true);
+	wp_enqueue_script('jquery-tools', get_template_directory_uri() . '/scripts.js', array('jquery'), '6.53', true);
 }
 add_action('wp_enqueue_scripts', 'bootstrapchile_scripts_styles');
 /*-----------------------------------------------------------------------------------*/
-/*	Google fonts
+/*	Google fonts (No está funcionando)
 /*-----------------------------------------------------------------------------------*/
+/*-
+
 function wpb_add_google_fonts() {
    wp_enqueue_style( 'wpb-google-fonts', '//fonts.googleapis.com/css?family=Merriweather:400,400i,900,900i|Roboto:400,700|Vollkorn:700italic', false );
 }
 add_action( 'wp_enqueue_scripts', 'wpb_add_google_fonts' );
+-*/
 /*-----------------------------------------------------------------------------------*/
 /*Project graveyard*/
 /*-----------------------------------------------------------------------------------*/
@@ -44,7 +47,7 @@ function graveyard_post_type(){
 		'supports'              => array( 'title','editor','thumbnail', 'excerpt', 'custom-fields' ),
 		'menu_icon' 			=> 'dashicons-trash',
 		'public'                => true,
-		'taxonomies'  			=> array( 'topics', 'category' ),
+		'taxonomies'  			=> array( 'topics', 'category', 'post_tag' ),
 		'menu_position'         => 7,
 		'has_archive'           => true,
 		'rewrite'               =>  array('slug' => 'graveyard'),
@@ -52,6 +55,31 @@ function graveyard_post_type(){
 	register_post_type( 'graveyard', $args );
 }
 add_action('init', 'graveyard_post_type');
+/*-----------------------------------------------------------------------------------*/
+/*	Exclude proyectines from search
+/*-----------------------------------------------------------------------------------*/
+function entex_fn_remove_post_type_from_search_results($query){
+
+    /* check is front end main loop content */
+    if(is_admin() || !$query->is_main_query()) return;
+
+    /* check is search result query */
+    if($query->is_search()){
+
+        $post_type_to_remove = 'graveyard';
+        /* get all searchable post types */
+        $searchable_post_types = get_post_types(array('exclude_from_search' => false));
+
+        /* make sure you got the proper results, and that your post type is in the results */
+        if(is_array($searchable_post_types) && in_array($post_type_to_remove, $searchable_post_types)){
+            /* remove the post type from the array */
+            unset( $searchable_post_types[ $post_type_to_remove ] );
+            /* set the query to the remaining searchable post types */
+            $query->set('post_type', $searchable_post_types);
+        }
+    }
+}
+add_action('pre_get_posts', 'entex_fn_remove_post_type_from_search_results');
 /*-----------------------------------------------------------------------------------*/
 /*	Thumbnail
 /*-----------------------------------------------------------------------------------*/
@@ -153,8 +181,12 @@ $content = preg_replace($pattern, $replacement, $content);
 return $content;
 }
 /*-----------------------------------------------------------------------------------*/
-/*	Sidebar
+/*	Add excerpt to pages
 /*-----------------------------------------------------------------------------------*/
+add_post_type_support( 'page', 'excerpt' );
+/*-----------------------------------------------------------------------------------*/
+/*	Sidebar
+
 function lrndm_register_sidebar() {
 
 	register_sidebar( array(
@@ -179,4 +211,5 @@ function lrndm_register_sidebar() {
 	}
 
 add_action( 'widgets_init', 'lrndm_register_sidebar' );
+/*-----------------------------------------------------------------------------------*/
 ?>

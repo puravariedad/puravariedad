@@ -3,7 +3,7 @@
 Template Name: Tag
 */
 get_header(); ?>
-	<div class="container top-padded-big">
+	<div class="container makeit__big top-padded-big">
 			<div class="row_fluid related_posts">
 			</div>
 			<div class="title bbottom_dash">
@@ -19,9 +19,6 @@ get_header(); ?>
 				<div class="pagination">
 					<?php numeric_posts_nav(); ?>
 				</div>
-			</div>
-			<div class="top-spacer btop_dash top-padded">
-				<?php get_sidebar(); ?>
 			</div>
 	</div>	
 <?php get_footer(); ?>

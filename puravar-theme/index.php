@@ -1,39 +1,34 @@
 <?php get_header(); ?>
 	<?php if (! get_query_var('paged') ) { ?>
-        <div class="container makeit__big">
-            <div class="banner_home">
-                <div class="container">
-                    <h1>UX, UI y otros desvaríos</h1>
-                    <h2>Blog de UX, diseño gráfico, diseño de producto, ilustración, CSS, portadas de discos y reflexiones que no llevan a ningún lugar a manos de su servidor</h2>
-                    Si quires ver mi portafolio está en <a href="http://www.juandiegocalero.com">www.juandiegocalero.com</a>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="highlited_posts">
-                <div class="title bbottom_dash top-spacer">
-                    <h3>Posts más leídos</h3>
-                    <p class="meta"></p>
-                </div>
-                <div class="more_views grid_by_3">
-                    <?php query_posts('tag__in=463&posts_per_page=3'); if (have_posts()) : while (have_posts()) : the_post(); ?>
-                        <?php get_template_part('inc/snippet-small'); ?>
-                    <?php endwhile; endif; wp_reset_query(); ?>
-                </div>
-            </div>
-        </div>
+		<div class="banner_home">
+			<div class="container makeit__big">
+				 <div class="banner_home__texto">
+					 <h1 class="h3">UX, UI y otros desvaríos</h1>
+						<h2>Blog de UX, diseño gráfico, diseño de producto, ilustración, CSS, portadas de discos y reflexiones que no llevan a ningún lugar a manos de su servidor</h2>
+						Si quires ver mi portafolio está en <a href="//www.juandiegocalero.com">www.juandiegocalero.com</a>
+				</div>
+				<a href="/"><img class="" src="https://puravariedad.com/wp-content/uploads/2025/06/nav-blog.png" alt="ilustración en pixel art de una montaña con un templo que dice blog"></a>
+			</div>
+		</div>
+        <div class="highlight">
+			<div class="container makeit__big">
+				<div class="highlited_posts">
+					<div class="title bbottom_dash">
+						<h3 class="h2">Artículos destacados</h3>
+					</div>
+					<?php get_template_part('inc/snippet-video'); ?>
+				</div>
+			</div>	
+		</div>
     <?php } ?>
-    <div class="container">
+    <div class="container makeit__big">
         <div class="title bbottom_dash top-spacer">
             <h2>Últimos posts</h2>
-            <p class="meta"></p>
         </div>
         <div class="latest_posts">
-            <div class="grid_by_2">
-                <?/* Avoid load videos posts */?>
+            <div class="grid_by_3">
                 <?php rewind_posts();
                 $args = array(
-                    'cat' => '-470,-506',
                     'post_type' => 'post',
                     'posts_per_page' => 20,
                         'paged' => ( get_query_var('paged') ? get_query_var('paged') : 1),
@@ -47,28 +42,4 @@
         </div>
     </div>
     <?php wp_reset_query();?>
-    <?php if (! get_query_var('paged') ) { ?>
-        <div class="container btop_dash top-spacer">
-            <div class="video__youtube bottom-padded">
-                <div class="title top-spacer">
-                    <h3 class="mt-0">Lo que ando viendo en youtube</h3>
-                    <p class="meta"></p>
-                </div>
-                <div class="related_posts grid_by_3">
-                    <?php $do_not_duplicate = array(); ?>
-                    <?php query_posts('cat=470' . '&posts_per_page=3'); ?>
-                    <?php while (have_posts()) : the_post(); ?>
-                    <?php $do_not_duplicate[] = $post->ID; ?>
-                        <?php get_template_part('inc/snippet-video'); ?>
-                    <?php endwhile; wp_reset_postdata(); ?>
-                </div>
-                <p>
-                    <a href="/category/youtube-videos/">Ver todos los videos</a>
-                </p>
-            </div>
-			<div class="top-spacer btop_dash top-padded">
-				<?php get_sidebar(); ?>
-			</div>
-        </div>
-    <?php } ?>
 <?php get_footer(); ?>

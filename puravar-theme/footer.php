@@ -1,24 +1,21 @@
 	</div>
 	<footer class="pie">
-		<div class="container btop_dash">
-			<div class="row_fluid">
-				<div class="col grid8">
+		<div class="container makeit__big btop_dash">
+			<div class="row_flex">
+				<div class="col_big__flex">
 					<nav class="menu_pie">
 						<?php wp_nav_menu( array('container_class' => 'menu_nav simple_menu', 'theme_location' => 'secondary') ); ?>
 					</nav>
 					<p><strong>2012 - <?php echo date('Y'); ?> Pura variedad</strong><br>
-					Atribución-NoComercial-CompartirIgual 3.0 No portada (<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/deed.es_CO" target="_blank" rel="noopener noreferrer">CC BY-NC-SA 3.0</a>) <br/> <a href="/politica-de-cookies">Política de cookies</a><br/> 
-					<strong>THEME BY <a href="http://juandiegocalero.com">Juandiegoles</a></strong></p>
+					Atribución/Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (<a href="//creativecommons.org/licenses/by-nc-sa/4.0/deed.es" target="_blank" rel="noopener noreferrer">CC BY-NC-SA 4.0</a>) <br/> <a href="/politica-de-cookies">Política de cookies</a> | <a rel="me" href="https://social.anartist.org/@puravariedad">Mastodon</a> | <a href="//juandiegocalero.com">THEME BY Juandiego Calero</a></p>
 				</div>
-				<div class="float_right">
-					<a href="/" class="logo_pv_bottom glitch logo__brand" data-text="Pura Variedad">
+				<a href="/blog/" class="logo_pv_bottom logo__brand" data-text="Pura Variedad">
 						Pura Variedad
 					</a>
-				</div>
 			</div>
 		</div>
 	</footer>
-	<div id="cookie_banner" class="cookie_banner bg_gray" style="display: none">
+	<div id="cookie_banner" class="cookie_banner grey-theme" style="display: none">
 		<div class="cookie_body">
 			<strong class="h4">
 				Aviso de Cookies
