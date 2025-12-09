@@ -28,16 +28,6 @@ function bootstrapchile_scripts_styles() {
 }
 add_action('wp_enqueue_scripts', 'bootstrapchile_scripts_styles');
 /*-----------------------------------------------------------------------------------*/
-/*	Google fonts (No está funcionando)
-/*-----------------------------------------------------------------------------------*/
-/*-
-
-function wpb_add_google_fonts() {
-   wp_enqueue_style( 'wpb-google-fonts', '//fonts.googleapis.com/css?family=Merriweather:400,400i,900,900i|Roboto:400,700|Vollkorn:700italic', false );
-}
-add_action( 'wp_enqueue_scripts', 'wpb_add_google_fonts' );
--*/
-/*-----------------------------------------------------------------------------------*/
 /*Project graveyard*/
 /*-----------------------------------------------------------------------------------*/
 function graveyard_post_type(){
@@ -184,32 +174,5 @@ return $content;
 /*	Add excerpt to pages
 /*-----------------------------------------------------------------------------------*/
 add_post_type_support( 'page', 'excerpt' );
-/*-----------------------------------------------------------------------------------*/
-/*	Sidebar
-
-function lrndm_register_sidebar() {
-
-	register_sidebar( array(
-		'name'	=> __('Sidebar principal', 'puravar'),
-		'id'	=> 'main_sidebar',
-		'description'	=>  __('Sidebar principal para los widgets', 'puravar'),
-		'before_widget'	=>	'<div id="%1$s" class="widget grid grid4 %2$s">',
-		'after_widget'	=> 	'</div>',
-		'before_title'	=>	'<h3 class="widget-title">',
-		'after_title'	=>	'</h3>',
-	) );
-
-	register_sidebar( array(
-		'name'	=> __('Sidebar secundaria', 'puravar'),
-		'id'	=> 'main_sidebar2',
-		'description'	=>  __('Sidebar secundaria para los widgets', 'puravar'),
-		'before_widget'	=>	'<div id="%1$s" class="widget %2$s">',
-		'after_widget'	=> 	'</div>',
-		'before_title'	=>	'<h3 class="widget-title">',
-		'after_title'	=>	'</h3>',
-	) );
-	}
-
-add_action( 'widgets_init', 'lrndm_register_sidebar' );
 /*-----------------------------------------------------------------------------------*/
 ?>

@@ -4,7 +4,7 @@ Theme URI: http://puravariedad.com/
 Author: @puravariedad
 Author URI: http://puravariedad.com/;
 Description: This is the theme for my personal blog
-Version: 5
+Version: 6.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: Web design, Mexico, Grid
@@ -1388,7 +1388,7 @@ figure.is-type-video,
 	margin-bottom: 0;
 	padding-bottom: 0
 }
-.blog_posts .wp-block-gallery.has-nested-images figure.wp-block-image {
+.page-id-17555 .wp-block-gallery.has-nested-images figure.wp-block-image {
 	flex-grow: initial;
 }
 @media (min-width: 1120px){ 

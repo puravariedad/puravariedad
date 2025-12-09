@@ -14,7 +14,7 @@ get_header(); ?>
         <a href="http://videofav.puravariedad.com/" class="item__nav item-videos" data-tooltip-text="Videos favoritos">Videos favoritos</a>
         <a href="/cosas-que-necesito-en-mi-vida/" class="item__nav item-need" data-tooltip-text="Necesito en mi vida">Necesito en mi vida</a>
         <a href="/links-de-blog/" class="item__nav item-links" data-tooltip-text="Links y recursos">Links y recursos</a>
-        <img src="<?php echo get_template_directory_uri(); ?>/img/isla-fondo.png" alt="Fondo de una isla" class="isla__nav_bg">
+        <img src="https://puravariedad.com/wp-content/uploads/2025/11/isla-puravariedad-x2.png" alt="Fondo de una isla" class="isla__nav_bg">
     </div>
 	<div class="container makeit__big">
 		<div class="isla__chiquicoso">
@@ -101,16 +101,16 @@ get_header(); ?>
 	}
 	.item-blog {
 		z-index: 1;
-		bottom: 505px;
-		left: 518px;
+		bottom: 510px;
+  		left: 512px;
 
 		width: 664px;
 		height: 642px;
 		background: url('https://puravariedad.com/wp-content/themes/puravar-theme-4/img/nav-blog.png');
 	}
 	.item-blog:hover {
-		bottom: 503px;
-		left: 516px;
+		bottom: 508px;
+  		left: 510px;
 
 		width: 668px;
 		height: 646px;
@@ -121,16 +121,16 @@ get_header(); ?>
 	}
 	.item-links {
 		z-index: 2;
-		bottom: 447px;
-		left: 337px;
+		bottom: 450px;
+  		left: 338px;
 
 		width: 518px;
 		height: 624px;
 		background: url('https://puravariedad.com/wp-content/themes/puravar-theme-4/img/nav-links.png');
 	}
 	.item-links:hover {
-		bottom: 445px;
-		left: 335px;
+		bottom: 448px;
+  		left: 336px;
 
 		width: 522px;
 		height: 628px;
@@ -142,16 +142,16 @@ get_header(); ?>
 	}
 	.item-need {
 		z-index: 3;
-		bottom: 553px;
-		left: 2px;
+		bottom: 552px;
+  		left: 16px;
 
 		width: 404px;
 		height: 380px;
 		background: url('https://puravariedad.com/wp-content/themes/puravar-theme-4/img/nav-need.png');
 	}
 	.item-need:hover {
-		bottom: 551px;
-		left: 0;
+		bottom: 550px;
+  		left: 14px;
 
 		width: 408px;
 		height: 384px;
@@ -159,16 +159,16 @@ get_header(); ?>
 	}
 	.item-porcs {
 		z-index: 4;
-		bottom: 380px;
-		left: 419px;
+		bottom: 418px;
+  		left: 378px;
 
 		width: 150px;
 		height: 112px;
 		background: url('https://puravariedad.com/wp-content/themes/puravar-theme-4/img/nav-porcs.png');
 	}
 	.item-porcs:hover {
-		bottom: 378px;
-		left: 417px;
+		bottom: 416px;
+		left: 376px;
 
 		width: 154px;
 		height: 116px;
@@ -258,16 +258,16 @@ get_header(); ?>
 	}
 	.item-cementerio {
 		z-index: 9;
-		bottom: 164px;
-		left: 1014px;
+		bottom: 172px;
+  		left: 1022px;
 
 		width: 526px;
 		height: 288px;
 		background: url('https://puravariedad.com/wp-content/themes/puravar-theme-4/img/nav-cementerio.png');
 	}
 	.item-cementerio:hover {
-		bottom: 162px;
-		left: 1012px;
+		bottom: 170px;
+  		left: 1020px;
 
 		width: 530px;
 		height: 292px;
